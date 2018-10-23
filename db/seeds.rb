@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Fridge.destroy_all
+
+kitchen = Fridge.create(location: "kitchen", brand: "GE", size: 35)
+basement = Fridge.create(location: "basement", brand: "Samsung", size: 40)
+mancave = Fridge.create(location: "mancave", brand: "Maytag", size: 20)
