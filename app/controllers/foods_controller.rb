@@ -5,7 +5,8 @@ class FoodsController < ApplicationController
   end
 
   def new
-    @food = food.new
+    @fridge = Fridge.find(params[:fridge_id])
+    @food = Food.new
   end
 
   def show
