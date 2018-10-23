@@ -17,13 +17,20 @@ class FridgesController < ApplicationController
     redirect_to fridge_path(fridge)
   end
 
-  def delete
+  def destroy
+    @fridge =  Fridge.find(params[:id])
+    @fridge.destroy
+    redirect_to "/fridges"
   end
 
   def edit
+    @fridge = Fridge.find(params[:id])
   end
 
   def update
+    @fridge = Fridge.find(params[:id])
+    @fridge.update(fridge_params)
+    redirect_to "/fridges/#{@fridge.id}"
   end
 
   private
