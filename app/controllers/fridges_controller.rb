@@ -9,11 +9,12 @@ class FridgesController < ApplicationController
   end
 
   def show
-    fridge_id = params[:id]
-    @fridge = Fridge.find_by(id: fridge_id)
+    @fridge = Fridge.find(params[:id])
   end
 
   def create
+    fridge = Fridge.create!(fridge_params)
+    redirect_to fridge_path(fridge)
   end
 
   def delete
@@ -23,6 +24,12 @@ class FridgesController < ApplicationController
   end
 
   def update
+  end
+
+  private
+
+  def fridge_params
+    params.require(:fridge).permit(:location, :brand, :size)
   end
 
 end
