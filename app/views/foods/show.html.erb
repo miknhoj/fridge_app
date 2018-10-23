@@ -11,3 +11,6 @@ Vegan: <%= @food.vegan%>
 Date Added: <%= @food.date_added%>
 </div>
 
+<div>
+  <%= link_to("Delete food item", "/fridges/#{@fridge.id}/foods/#{@food.id}")%>
+</div>

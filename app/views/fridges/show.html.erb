@@ -24,7 +24,7 @@ Size: <%= @fridge.size %> cubic ft
 </div>
 
 <% @foods.map do |food| %>
-  <div><%= link_to("#{food.name}", fridge_food_path(food)) %></div>
+  <div><%= link_to("#{food.name}", "/fridges/#{@fridge.id}/foods/#{food.id}") %></div>
 <%end%>
 
 <div>

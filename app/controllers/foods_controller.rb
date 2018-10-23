@@ -10,7 +10,7 @@ class FoodsController < ApplicationController
   end
 
   def show
-    @fridge = Fridge.find(params[:id])
+    @fridge = Fridge.find(params[:fridge_id])
     @food = Food.find(params[:id])
   end
 
@@ -21,9 +21,9 @@ class FoodsController < ApplicationController
   end
 
   def destroy
-    @fridge =  Fridge.find(params[:id])
-    @fridge.destroy
-    redirect_to "/fridges"
+    @fridge = Fridge.find(params[:fridge_id])
+    @food = Food.find(params[:id])
+    redirect_to "/fridges/#{@fridge.id}"
   end
 
   def edit

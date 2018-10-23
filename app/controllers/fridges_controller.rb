@@ -11,6 +11,7 @@ class FridgesController < ApplicationController
   def show
     @fridge = Fridge.find(params[:id])
     @foods = @fridge.foods
+ 
   end
 
   def create
