@@ -1,6 +1,5 @@
 <h1>Fridges</h1>
-  <ul>
+
     <% @fridges.map do |fridge| %>
-      <li><%= fridge.location %></li>
+       <strong><%= link_to "#{fridge.location}", fridge_path(fridge) %></strong>
     <% end %>
-  </ul>
