@@ -9,7 +9,8 @@
     <%= f.text_field :weight, class: "form-control", placeholder: "Weight" %>
   </div>
   <div class="form-group">
-    <%= f.text_field :vegan, class: "form-control", placeholder: "Vegan" %>
+    <%= f.label :vegan %>
+    <%= f.check_box :vegan, class: "form-control", placeholder: "Vegan" %>
   </div>
     <%= f.submit "Add Food", class: "btn btn-block btn-success" %>
   </div>
