@@ -1,5 +1,6 @@
 <h1>Fridge in <%= @fridge.location %> </h1>
 <hr>
+<h2>Fridge Details</h2>
 <div>
 Brand: <%= @fridge.brand %>
 </div>
@@ -15,3 +16,13 @@ Size: <%= @fridge.size %> cubic ft
 <div>
 <%= link_to("Delete Fridge", "/fridges/#{@fridge.id}", method: :delete) %>
 </div>
+<hr>
+
+<h2>Food in Fridge</h2>
+<div>
+<%= link_to("Look in the Fridge", "/fridges/#{@fridge.id}/foods")%>
+</div>
+
+<% @foods.map do |food| %>
+  <div><%= link_to("#{food.name}", fridge_food_path(food)) %></div>
+<%end%>

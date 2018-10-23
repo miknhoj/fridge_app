@@ -1,6 +1,6 @@
 <h1>Fridges <a href= '/fridges/new'> (+) </a></h1>
 <hr>
     <% @fridges.map do |fridge| %>
-      <div> <strong><%= link_to "#{fridge.location}", fridge_path(fridge) %></strong> </div>
+      <div> <strong><%= link_to("#{fridge.location}", fridge_path(fridge))%></strong> </div>
     <% end %>
 

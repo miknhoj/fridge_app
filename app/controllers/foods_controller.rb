@@ -1,16 +1,16 @@
-class FridgesController < ApplicationController
-
+class FoodsController < ApplicationController
   def index
-    @fridges = Fridge.all
+    @fridge = Fridge.find(params[:fridge_id])
+    @foods = @fridge.foods
   end
 
   def new
-    @fridge = Fridge.new
+    @food = food.new
   end
 
   def show
     @fridge = Fridge.find(params[:id])
-    @foods = @fridge.foods
+    @food = Food.find(params[:id])
   end
 
   def create
@@ -36,8 +36,8 @@ class FridgesController < ApplicationController
 
   private
 
-  def fridge_params
-    params.require(:fridge).permit(:location, :brand, :size)
+  def food_params
+    params.require(:food).permit(:name, :weight, :vegan, :date_added)
   end
 
 end

@@ -11,3 +11,7 @@ Fridge.destroy_all
 kitchen = Fridge.create(location: "kitchen", brand: "GE", size: 35)
 basement = Fridge.create(location: "basement", brand: "Samsung", size: 40)
 mancave = Fridge.create(location: "mancave", brand: "Maytag", size: 20)
+
+apple = kitchen.foods.create(name: "Apple", weight: 1, vegan: true)
+milk = kitchen.foods.create(name: "Milk", weight: 2, vegan: true)
+orange = kitchen.foods.create(name: "Orange", weight: 1, vegan: true)
