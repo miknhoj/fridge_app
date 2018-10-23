@@ -1,1 +1,16 @@
-NEW
+<h1>Add a new food item</h1>
+<hr>
+
+<%= form_for @food, url: fridge_foods_path do |f| %>
+  <div class="form-group">
+    <%= f.text_field :name, class: "form-control", placeholder: "Name", autofocus: true %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :weight, class: "form-control", placeholder: "Weight" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :vegan, class: "form-control", placeholder: "Vegan" %>
+  </div>
+    <%= f.submit "Add Food", class: "btn btn-block btn-success" %>
+  </div>
+<% end %>

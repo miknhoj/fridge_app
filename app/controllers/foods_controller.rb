@@ -15,8 +15,9 @@ class FoodsController < ApplicationController
   end
 
   def create
-    fridge = Fridge.create!(fridge_params)
-    redirect_to fridge_path(fridge)
+    @fridge = Fridge.find(params[:fridge_id])
+    @fridge.foods.create(fridge_params)
+    redirect_to "/fridges/#{fridge.id}"
   end
 
   def destroy
