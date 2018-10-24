@@ -1,2 +1,16 @@
-<h1>Drinks#new</h1>
-<p>Find me in app/views/drinks/new.html.erb</p>
+<h1>Put a new drink in the fridge</h1>
+
+<%= form_for @drink, url: fridge_drinks_path do |f| %>
+  <div class="form-group">
+    <%= f.text_field :name, class: "form-control", placeholder: "Name", autofocus: true %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :size, class: "form-control", placeholder: "Size" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :alcoholic%>
+    <%= f.check_box :alcoholic, class: "form-control", placeholder: "Alcoholic" %>
+  </div>
+    <%= f.submit "Add Drink", class: "btn btn-block btn-success" %>
+  </div>
+<% end %>

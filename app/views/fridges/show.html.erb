@@ -18,7 +18,7 @@ Size: <%= @fridge.size %> cubic ft
 </div>
 <hr>
 
-<h2>Food in Fridge</h2>
+<h2>Food in Fridge <%= link_to("(+)", "/fridges/#{@fridge.id}/foods/new") %> </h2>
 <div>
 <%= link_to("Look in the Fridge", "/fridges/#{@fridge.id}/foods")%>
 </div>
@@ -27,6 +27,8 @@ Size: <%= @fridge.size %> cubic ft
   <div><%= link_to("#{food.name}", "/fridges/#{@fridge.id}/foods/#{food.id}") %></div>
 <%end%>
 
-<div>
-<%= link_to("Add New Food Item", "/fridges/#{@fridge.id}/foods/new") %>
-</div>
+
+<h2>Drinks in Fridge <%= link_to("(+)", "/fridges/#{@fridge.id}/drinks/new") %> </h2>
+<% @drinks.map do |drink| %>
+  <div> <%= link_to("#{drink.name}", "/fridges/#{@fridge.id}/drinks/#{drink.id}") %></div>
+<% end%>
