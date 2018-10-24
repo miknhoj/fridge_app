@@ -1,6 +1,6 @@
 <h1>Drink some <%=@drink.name%></h1>
 
-<%= form_for @drink, url: fridge_drinks_path do |f| %>
+<%= form_for @drink, url: fridge_drink_path do |f| %>
   <div class="form-group">
     How much is left: <%= f.text_field :size, class: "form-control", placeholder: "Size" %> oz.
   </div>

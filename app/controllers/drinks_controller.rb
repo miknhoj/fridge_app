@@ -16,6 +16,7 @@ class DrinksController < ApplicationController
     redirect_to "/fridges/#{@fridge.id}"
   end
 
+
   def edit
     @fridge = Fridge.find(params[:id])
     @drink = Drink.find(params[:id])
@@ -25,7 +26,7 @@ class DrinksController < ApplicationController
     @fridge = Fridge.find(params[:fridge_id])
     @drink = Drink.find(params[:id])
     @drink.update(drink_params)
-    redirect_to "/fridges/#{@fridge.id}"
+    redirect_to "/fridges/#{@fridge.id}/drinks/#{@drink.id}"
   end
 
   def destroy
