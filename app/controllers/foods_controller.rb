@@ -23,6 +23,7 @@ class FoodsController < ApplicationController
   def destroy
     @fridge = Fridge.find(params[:fridge_id])
     @food = Food.find(params[:id])
+    @food.destroy
     redirect_to "/fridges/#{@fridge.id}"
   end
 
