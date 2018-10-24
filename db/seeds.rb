@@ -15,3 +15,7 @@ mancave = Fridge.create(location: "mancave", brand: "Maytag", size: 20)
 apple = kitchen.foods.create(name: "Apple", weight: 1, vegan: true)
 milk = kitchen.foods.create(name: "Milk", weight: 2, vegan: true)
 orange = kitchen.foods.create(name: "Orange", weight: 1, vegan: true)
+
+coke = kitchen.drinks.create(name:"Coke", size: 12, alcoholic: false)
+milk = kitchen.drinks.create(name:"milk", size: 24, alcoholic: false)
+beer = kitchen.drinks.create(name:"Coors Lite", size: 40, alcoholic: true)
