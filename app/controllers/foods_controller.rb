@@ -27,8 +27,9 @@ class FoodsController < ApplicationController
     redirect_to "/fridges/#{@fridge.id}"
   end
 
+  # edit and update don't work
   def edit
-    @fridge = Fridge.find(params[:id])
+    @fridge = Fridge.find(params[:fridge_id])
   end
 
   def update

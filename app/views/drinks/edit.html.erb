@@ -1,2 +1,9 @@
-<h1>Drinks#edit</h1>
-<p>Find me in app/views/drinks/edit.html.erb</p>
+<h1>Drink some <%=@drink.name%></h1>
+
+<%= form_for @drink, url: fridge_drinks_path do |f| %>
+  <div class="form-group">
+    How much is left: <%= f.text_field :size, class: "form-control", placeholder: "Size" %> oz.
+  </div>
+    <%= f.submit "Put Drink Back in Fridge", class: "btn btn-block btn-success" %>
+  </div>
+<% end %>
